@@ -19,13 +19,13 @@ Wir öffnen unsere Dateien.
 Wenn wir jetzt dem Button Click EventHandler eine Methode zuweisen möchten, müssen wir das jeweilige Button Control erstmal finden.
 Das machen wir mittels
 
-```css
+```cs
 view.FindViewById<Button>(Resource.Id.buttonHome)
 ```
 
 für diesen Aufruf benötigen wir aber erstmal das View Objekt welches wir in der public override View OnCreateView() erstellen.
 
-```css
+```cs
 public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 {
     // Hier erstelllen wir unser View Objekt
@@ -67,7 +67,7 @@ void OnClickButton(object sender, EventArgs e)
 Unsere Dateien sehen nun so aus:
 
 1. FragmentHome.cs
-  [*]```cs
+  ```cs
   using System;
   using Android.OS;
   using Android.Views;
@@ -109,7 +109,7 @@ Unsere Dateien sehen nun so aus:
   ```
 
 2. FragmentHome.cs
-  [*]```cs
+  ```cs
   using System;
   using Android.OS;
   using Android.Views;
