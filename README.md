@@ -1,4 +1,4 @@
-Android Development mit C# Xamarin Tutorial #2: Button Click EventHandler
+Android Development mit C# Xamarin Tutorial #3: Button Click EventHandler
 =========================================================================
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/4olqbw-a0Js/0.jpg)](https://www.youtube.com/watch?v=4olqbw-a0Js)
@@ -149,3 +149,6 @@ Unsere Dateien sehen nun so aus:
       }
   }
   ```
+
+
+Wir sind fertig und können jetzt unser Projekt starten. Klicken wir jetzt auf einen der Buttons sollte unsere Methode ausgeführt werden und es sollte unten am Bildschirm ein Meldetext erscheinen.
