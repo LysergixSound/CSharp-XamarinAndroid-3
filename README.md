@@ -12,7 +12,10 @@ Beide Fragmente besitzen jeweils einen Button. Einmal Resource.Id.buttonHome und
 
 Schritt 2: Dem Button Click EventHandler eine Methode zuweisen
 ==============================================================
-Wir öffnen FragmentHome.cs und FragmentSettings.cs
+Wir öffnen unsere Dateien.
+1. FragmentHome.cs
+2. FragmentSettings.cs
+
 Wenn wir jetzt dem Button Click EventHandler eine Methode zuweisen möchten, müssen wir das jeweilige Button Control erstmal finden.
 Das machen wir mittels
 
@@ -34,7 +37,7 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 
 So nun können wir unser Button Control holen und den EventHandler eine Methode zuweisen.
 
-```css
+```cs
 public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
 {
     // Hier erstelllen wir unser View Objekt
@@ -51,7 +54,7 @@ public override View OnCreateView(LayoutInflater inflater, ViewGroup container, 
 
 Wird der Button jetzt gedrückt wird die Methode OnClickButton(sender, e) aufgerufen. Diese existiert allerdings noch nicht deswegen erstellen wir sie jetzt
 
-```css
+```cs
 void OnClickButton(object sender, EventArgs e)
 {
     // Einfachen Toast erstellen
@@ -62,82 +65,87 @@ void OnClickButton(object sender, EventArgs e)
 
 
 Unsere Dateien sehen nun so aus:
-FragmentHome.cs
-```css
-using System;
-using Android.OS;
-using Android.Views;
-using Android.Widget;
 
-namespace FirstApp
-{
-    public class FragmentHome : Android.Support.V4.App.Fragment
-    {
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
+1. FragmentHome.cs
+  [*]```cs
+  using System;
+  using Android.OS;
+  using Android.Views;
+  using Android.Widget;
 
-            // Create your fragment here
-        }
+  namespace FirstApp
+  {
+      public class FragmentHome : Android.Support.V4.App.Fragment
+      {
+          public override void OnCreate(Bundle savedInstanceState)
+          {
+              base.OnCreate(savedInstanceState);
 
-        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-        {
-            // Use this to return your custom view for this Fragment
-            View view = inflater.Inflate(Resource.Layout.fragment_home, container, false);
+              // Create your fragment here
+          }
 
-            // Setze EventHandler
-            Button btnHome = view.FindViewById<Button>(Resource.Id.buttonHome);
-            btnHome.Click += OnClickButton;
+          public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+          {
+              // Hier erstelllen wir unser View Objekt
+              View view = inflater.Inflate(Resource.Layout.fragment_home, container, false);
 
-            return view;
+              // Hole Button Control
+              Button btnHome = view.FindViewById<Button>(Resource.Id.buttonHome);
+              // Weise dem Click EventHandler die Methode OnClickButton(sender, e) zu
+              btnHome.Click += OnClickButton;
 
-        }
+              return view;
 
-        void OnClickButton(object sender, EventArgs e)
-        {
-            // TODO
-            Toast.MakeText(Activity, "Übersicht", ToastLength.Long).Show();
-        }
-    }
-}
-```
+          }
 
-FragmentHome.cs
-```css
-using System;
-using Android.OS;
-using Android.Views;
-using Android.Widget;
+          void OnClickButton(object sender, EventArgs e)
+          {
+            // Einfachen Toast erstellen
+            // Toast.MakeText benötigt den Context einer Activity. Da wir uns aber in einer Fragment Datei befinden geben wir Activity als parameter an.
+              Toast.MakeText(Activity, "Übersicht", ToastLength.Long).Show();
+          }
+      }
+  }
+  ```
 
-namespace FirstApp
-{
-    public class FragmentSettings : Android.Support.V4.App.Fragment
-    {
-        public override void OnCreate(Bundle savedInstanceState)
-        {
-            base.OnCreate(savedInstanceState);
+2. FragmentHome.cs
+  [*]```cs
+  using System;
+  using Android.OS;
+  using Android.Views;
+  using Android.Widget;
 
-            // Create your fragment here
-        }
+  namespace FirstApp
+  {
+      public class FragmentSettings : Android.Support.V4.App.Fragment
+      {
+          public override void OnCreate(Bundle savedInstanceState)
+          {
+              base.OnCreate(savedInstanceState);
 
-        public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-        {
-            // Use this to return your custom view for this Fragment
-            View view = inflater.Inflate(Resource.Layout.fragment_settings, container, false);
+              // Create your fragment here
+          }
 
-            // Setze EventHandler
-            Button btnSettings = view.FindViewById<Button>(Resource.Id.buttonSettings);
-            btnSettings.Click += OnClickButton;
+          public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+          {
+              // Hier erstelllen wir unser View Objekt
+              View view = inflater.Inflate(Resource.Layout.fragment_settings, container, false);
 
-            return view;
+              // Hole Button Control
+              Button btnSettings = view.FindViewById<Button>(Resource.Id.buttonSettings);
+              // Weise dem Click EventHandler die Methode OnClickButton(sender, e) zu
+              btnSettings.Click += OnClickButton;
 
-        }
+              return view;
 
-        void OnClickButton(object sender, EventArgs e)
-        {
-            // TODO
-            Toast.MakeText(Activity, "Einstellungen", ToastLength.Long).Show();
-        }
-    }
-}
-```
+          }
+
+          void OnClickButton(object sender, EventArgs e)
+          {
+            // Einfachen Toast erstellen
+            // Toast.MakeText benötigt den Context einer Activity. Da wir uns aber in einer Fragment Datei befinden geben wir Activity als parameter an.
+              Toast.MakeText(Activity, "Einstellungen", ToastLength.Long).Show();
+          }
+      }
+  }
+  ```

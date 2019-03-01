@@ -24,11 +24,12 @@ namespace FirstApp
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            // Use this to return your custom view for this Fragment
+            // Hier erstelllen wir unser View Objekt
             View view = inflater.Inflate(Resource.Layout.fragment_settings, container, false);
 
-            // Setze EventHandler
+            // Hole Button Control
             Button btnSettings = view.FindViewById<Button>(Resource.Id.buttonSettings);
+            // Weise dem Click EventHandler die Methode OnClickButton(sender, e) zu
             btnSettings.Click += OnClickButton;
 
             return view;
@@ -37,7 +38,8 @@ namespace FirstApp
 
         void OnClickButton(object sender, EventArgs e)
         {
-            // TODO
+            // Einfachen Toast erstellen
+            // Toast.MakeText benötigt den Context einer Activity. Da wir uns aber in einer Fragment Datei befinden geben wir Activity als parameter an.
             Toast.MakeText(Activity, "Einstellungen", ToastLength.Long).Show();
         }
     }
