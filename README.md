@@ -1,7 +1,7 @@
 Android Development mit C# Xamarin Tutorial #3: Button Click EventHandler
 =========================================================================
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/4olqbw-a0Js/0.jpg)](https://www.youtube.com/watch?v=K8fM2VELSdQ)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/K8fM2VELSdQ/0.jpg)](https://www.youtube.com/watch?v=K8fM2VELSdQ)
 
 Schritt 1: Projekt öffnen
 ============================
